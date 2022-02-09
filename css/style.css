@@ -18,23 +18,78 @@ html {
 }
 
 body {
-  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: darkgreen;
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40% 15% 25% 20%;
   grid-template-areas: 
         "Header"
         "Main"
         "Content"
-        "Footer";
+        "Footer"; */
 }
 
-#status{
+main {
+  border: 1px solid red;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  border-radius: 50%;
+  border: 2px solid green;
+}
+
+#status {
+  margin-left: auto;
+  padding: 5px;
+}
+
+#brand {
+  display: none;
+}
+
+#occupation {
+  background-color: gray;
+  width: 100%;
+  text-align: center;
+}
+
+#contact {
+  display: flex;
+  border: 1px solid red;
+  width: 100%;
+
+}
+
+#contact p {
+  width: 50%;
+  border: 1px dotted blue;
+  text-align: center;
+  padding: 25px;
+  margin: 0px;
+  background-color: limegreen;
+}
+
+#contact p:first-child{
+  background-color: rgb(129, 228, 129)
+  /*selecting first child*/
+}
+
+/* #status{
   grid-area: header;
+  background-color: white;
+  
 
 }
 
@@ -42,24 +97,94 @@ img {
   grid-area: header;
   border-radius: 50%;
   border: 5px solid green;
+  background-color: white;
 }
 
 h1 {
   grid-area: header;
+  background-color: white;
 }
 
 #occupation {
   grid-area: main;
+  background-color: lightgray;
 }
 
 #brand {
   grid-area: main;
+  background-color: lightgray;
+
 }
 
 #offer {
   grid-area: content;
+  background-color: white;
 }
 
 #contact {
+  display: flex;
+  align-items: center;
   grid-area: footer;
+  background-color: green;
+
+} */
+
+
+/* .flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+/* change to grid */
+@media only screen and (min-width: 600px) {
+  main {
+    width: 700px;
+    display: grid;
+    text-align: left;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto;
+    /*auto = spans evenly*/
+    grid-template-areas: 
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer" ;
+    /*designing the grid
+    apply to properties later*/
+  }
+  #status {
+    grid-area: status;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  #name {
+    grid-area: name;
+  }
+
+  img {
+    grid-area: img;
+    margin: 0 auto;
+  }
+
+  #occupation {
+    grid-area: occupation;
+  }
+
+  #brand {
+    grid-area: brand;
+    display: flex;
+    border-left: 5px solid green;
+  }
+
+  #contact {
+    grid-area: contact;
+    margin-top: 20px;
+  }
+
+  #offer {
+    grid-area: offer;
+  }
 }
